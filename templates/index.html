@@ -1,27 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GrowIQ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <div class="container">
-        <h2>GrowIQ</h2>
 
-        <form action="/result" method="post">
+    <h1>GrowIQ Website</h1>
 
-            <label>Age</label>
-            <input type="number" name="age" required>
+    <form action="/result" method="post">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <br><br>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
 
-            <label>Difficulty</label>
-            <select name="difficulty">
-                <option value="memory">Memory</option>
-                <option value="attention">Attention</option>
-                <option value="reading">Reading</option>
-            </select>
+    {% if result %}
+        <hr>
+        <h2>Form Submitted Successfully 🎉</h2>
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+    {% endif %}
 
-            <label>Interest</label>
-            <select name="interest">
-                <option value="images">Images</option>
-                <option value="numbers">Numbers</option>
-                <option value="stories">Stories</option>
-            </select>
-
-            <button type="submit">Get Learning Plan</button>
-        </form>
-    </div>
 </body>
+</html>
+

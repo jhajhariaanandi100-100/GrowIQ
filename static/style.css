@@ -1,92 +1,21 @@
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Page background */
 body {
-    background-color: #000000;   /* Black */
-    color: #ffffff;              /* White text */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 40px;
 }
 
-/* Main container */
-.container {
-    background-color: #ffffff;   /* White card */
-    color: #000000;
-    padding: 30px;
-    width: 360px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+h1 {
+    color: #333;
 }
 
-/* Title */
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
+form {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 5px;
 }
 
-/* Labels */
-label {
-    display: block;
-    margin-top: 12px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* Input fields */
-input, select {
+input, button {
     width: 100%;
     padding: 8px;
-    margin-top: 6px;
-    border-radius: 4px;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Button */
-button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #333333;
-}
-
-/* Result page text */
-.result {
-    margin-top: 15px;
-    font-size: 14px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* Back link */
-a {
-    display: block;
-    margin-top: 15px;
-    text-align: center;
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
 }
