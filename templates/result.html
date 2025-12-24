@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Study Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Hello {{ name }} 👋</h1>
+
+    <p><strong>Class:</strong> {{ student_class }}</p>
+    <p><strong>Difficulty:</strong> {{ difficulty }}</p>
+    <p><strong>Interest:</strong> {{ interest }}</p>
+
+    <h2>Your Personalized Study Plan 📘</h2>
+
+    <ul>
+        {% for item in study_plan %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">⬅ Go Back</a>
+</div>
+
+</body>
+</html>
