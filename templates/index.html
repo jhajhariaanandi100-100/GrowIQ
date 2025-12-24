@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GrowIQ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>GrowIQ</h2>
+
+        <form action="/result" method="post">
+
+            <label>Age</label>
+            <input type="number" name="age" required>
+
+            <label>Difficulty</label>
+            <select name="difficulty">
+                <option value="memory">Memory</option>
+                <option value="attention">Attention</option>
+                <option value="reading">Reading</option>
+            </select>
+
+            <label>Interest</label>
+            <select name="interest">
+                <option value="images">Images</option>
+                <option value="numbers">Numbers</option>
+                <option value="stories">Stories</option>
+            </select>
+
+            <button type="submit">Get Learning Plan</button>
+        </form>
+    </div>
+</body>
+</html>
