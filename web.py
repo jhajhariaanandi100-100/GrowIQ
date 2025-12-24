@@ -6,58 +6,34 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-
 @app.route("/submit", methods=["POST"])
 def submit():
     name = request.form.get("name")
     age = request.form.get("age")
-    student_class = request.form.get("class")
-    gender = request.form.get("gender")
-    difficulty = request.form.get("difficulty")
     interest = request.form.get("interest")
+    difficulty = request.form.get("difficulty")
 
-    # SIMPLE STUDY PLAN LOGIC
-    study_plan = []
+    # Simple study plan logic
+    plan = ""
 
     if interest == "Programming":
-        study_plan = [
-            "Learn basics of Python",
-            "Practice coding 1 hour daily",
-            "Build small projects",
-            "Solve problems on HackerRank"
-        ]
-    elif interest == "AI / ML":
-        study_plan = [
-            "Learn Python fundamentals",
-            "Study basic Mathematics",
-            "Understand Machine Learning concepts",
-            "Practice small ML projects"
-        ]
+        plan = "Learn C basics → Loops → Functions → DSA"
+    elif interest == "AI & ML":
+        plan = "Python → Math → Machine Learning → Projects"
     elif interest == "Web Development":
-        study_plan = [
-            "Learn HTML & CSS",
-            "Learn JavaScript basics",
-            "Build simple websites",
-            "Learn Flask framework"
-        ]
-    else:
-        study_plan = [
-            "Create daily study routine",
-            "Revise concepts",
-            "Practice questions",
-            "Take weekly tests"
-        ]
+        plan = "HTML → CSS → JavaScript → Flask"
+    elif interest == "Data Science":
+        plan = "Python → Pandas → Visualization → Projects"
 
-    return render_template(
-        "result.html",
-        name=name,
-        age=age,
-        student_class=student_class,
-        difficulty=difficulty,
-        interest=interest,
-        study_plan=study_plan
-    )
-
+    return f"""
+    <h1>Hello {name} 👋</h1>
+    <h2>Your Personalized Study Plan</h2>
+    <p><b>Interest:</b> {interest}</p>
+    <p><b>Difficulty:</b> {difficulty}</p>
+    <p><b>Plan:</b> {plan}</p>
+    <a href="/">⬅ Go Back</a>
+    """
 
 if __name__ == "__main__":
     app.run(debug=True)
+

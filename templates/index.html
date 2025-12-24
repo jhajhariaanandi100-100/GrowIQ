@@ -3,31 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>GrowIQ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="container">
-
-    <!-- LOGO -->
-    <img src="{{ url_for('static', filename='images/logo.png') }}"
-         alt=""
-         class="logo"
-         onerror="this.style.display='none'">
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
 
     <h1>GrowIQ</h1>
-    <p class="tagline">Where Every Mind Matters</p>
+    <p>Where Every Mind Matters</p>
 
-    <form method="POST">
+    <!-- 🔴 THIS IS VERY IMPORTANT -->
+    <form action="/submit" method="POST">
 
-        <input type="text" name="name" placeholder="Full Name" required>
-
-        <input type="email" name="email" placeholder="Email Address" required>
-
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
         <input type="number" name="age" placeholder="Age" required>
-
         <input type="text" name="class_year" placeholder="Class / Year" required>
 
         <select name="gender" required>
@@ -39,26 +30,23 @@
 
         <select name="difficulty" required>
             <option value="">Difficulty Level</option>
-            <option>Beginner</option>
-            <option>Intermediate</option>
-            <option>Advanced</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
         </select>
 
         <select name="interest" required>
             <option value="">Select Interest</option>
             <option>Programming</option>
-            <option>Artificial Intelligence</option>
-            <option>Data Science</option>
+            <option>AI & ML</option>
             <option>Web Development</option>
-            <option>Cyber Security</option>
+            <option>Data Science</option>
         </select>
 
-        <button type="submit">Generate Learning Plan</button>
+        <button type="submit">Generate Study Plan</button>
 
     </form>
 </div>
 
 </body>
 </html>
-
-
