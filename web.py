@@ -20,44 +20,45 @@ def submit():
 
     school_plan = f"""
 📚 **STUDY PLAN FOR SCHOOL STUDENT**
-----------------------------------------------------
+.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.
+
 👤 Name: {name}
 🎓 Class: {cls}
 ❤️ Interest: {interest}
 
-🗓️ **Daily Routine**
+🗓️ Daily Routine
 - 6:00 AM • Morning revision (30 min)
 - 5:00 PM • Homework + Doubt solving (1 hr)
 - 7:00 PM • Subject in focus (Math/Science/Eng) (1.5 hr)
 - 9:00 PM • Light revision / Notes preparation (30 min)
 
-🎯 **Interest Based Guidance**
+🎯 Interest Based Guidance
 - Interest: {interest} = Practice & explore related Olympiads + YouTube resources.
 
-🔥 **Difficulty Level Tips**
+🔥 Difficulty Level Tips
 - {difficulty.capitalize()} topics: Focus more, ask teachers, use NCERT + reference books.
 """
 
     cs_plan = f"""
-💻 **STUDY PLAN FOR COMPUTER SCIENCE STUDENT**
-----------------------------------------------------
+💻 STUDY PLAN FOR COMPUTER SCIENCE STUDENT
+.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.
 👤 Name: {name}
 🎓 Age: {age}
 ❤️ Interest Area: {interest}
 
-🗓️ **Daily Routine**
+🗓️ Daily Routine
 - 2 hrs Coding practice (C/Python/Java)
 - 45 min DSA concepts + Problem Solving
 - 1 hr Development Learning (Web/App/ML)
 - 30 min GitHub / Resume Building
 
-🎯 **Interest Based Path**
+🎯 Interest Based Path
 - Web Dev → HTML, CSS, JS → React → Backend (Flask/Node)
 - AI/ML → Python, Numpy, Pandas, ML Algorithms
 - App Dev → Flutter / Kotlin
 - Cybersecurity → Networking + Linux + Tools (Nmap, BurpSuite)
 
-🔥 **Difficulty Level Tips**
+🔥 Difficulty Level Tips
 - {difficulty.capitalize()} topics: Practice 3 problems/day on Hackerrank / CodeStudio.
 """
 
