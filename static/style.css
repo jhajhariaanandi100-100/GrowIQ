@@ -1,52 +1,74 @@
+/* GLOBAL */
 body {
-    background: #0a1f44;
+    background-color: #000;
+    color: #fff;
     font-family: Arial, sans-serif;
-    color: white;
 }
 
+/* MAIN CONTAINER */
 .container {
     width: 420px;
     margin: 60px auto;
-    background: white;
-    color: black;
+    background-color: #111;
     padding: 25px;
     border-radius: 10px;
     text-align: center;
 }
 
+/* LOGO */
+.logo-box {
+    background: #000;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.logo-box img {
+    width: 120px;
+}
+
+/* HEADINGS */
 h1 {
-    margin-bottom: 5px;
+    margin: 10px 0 5px 0;
 }
 
 .tagline {
-    color: #0a1f44;
-    font-weight: bold;
+    font-size: 14px;
+    color: #ccc;
     margin-bottom: 20px;
 }
 
+/* FORM */
 input, select {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
 }
 
+/* BUTTON */
 button {
     width: 100%;
     padding: 10px;
-    background: #0a1f44;
-    color: white;
+    background: #fff;
+    color: #000;
     border: none;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
 }
 
 button:hover {
-    background: #132f6b;
+    background: #ccc;
 }
 
+/* RESULT BOX */
 .result {
     margin-top: 20px;
-    background: #eef2f8;
+    background: #fff;
+    color: #000;
     padding: 15px;
     border-radius: 6px;
 }
