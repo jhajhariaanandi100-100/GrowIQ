@@ -2,57 +2,55 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
     min-height: 100vh;
-    background: linear-gradient(180deg, #0a1d3b, #08162f);
+    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-/* Main Card */
+/* Card */
 .container {
-    background: #ffffff;
+    background: #111;
     width: 100%;
     max-width: 420px;
-    padding: 25px 20px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
     text-align: center;
 }
 
 /* Logo */
 .logo {
-    max-width: 160px;
-    width: 100%;
+    width: 150px;
     margin-bottom: 10px;
 }
 
-/* Heading */
+/* Title */
 h1 {
-    font-size: 24px;
-    margin-bottom: 5px;
-    color: #000;
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 6px;
 }
 
 .tagline {
-    font-size: 13px;
-    color: #444;
+    color: #bbb;
+    font-size: 14px;
     margin-bottom: 18px;
 }
 
-/* Inputs & Select */
-input,
-select {
+/* Inputs */
+input, select {
     width: 100%;
     padding: 12px;
     margin-bottom: 12px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: none;
     font-size: 14px;
 }
 
@@ -60,35 +58,26 @@ select {
 button {
     width: 100%;
     padding: 12px;
-    background: #0a1d3b;
-    color: #fff;
+    background: #fff;
+    color: #000;
     border: none;
     border-radius: 6px;
     font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
 }
 
 button:hover {
-    background: #08162f;
+    background: #ddd;
 }
 
-/* Mobile Optimization */
+/* Mobile */
 @media (max-width: 480px) {
-    body {
-        align-items: flex-start;
-    }
-
     .container {
-        margin-top: 30px;
-        padding: 20px 15px;
+        padding: 20px;
     }
 
     h1 {
         font-size: 22px;
     }
-
-    .logo {
-        max-width: 140px;
-    }
 }
-

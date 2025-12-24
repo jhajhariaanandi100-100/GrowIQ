@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>GrowIQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -10,18 +12,23 @@
 <div class="container">
 
     <!-- LOGO -->
-    <div class="logo-box">
-        <img src="{{ url_for('static', filename='images/growiq_logo.png') }}" alt="GrowIQ Logo">
-    </div>
+    <img src="{{ url_for('static', filename='images/logo.png') }}"
+         alt=""
+         class="logo"
+         onerror="this.style.display='none'">
 
     <h1>GrowIQ</h1>
     <p class="tagline">Where Every Mind Matters</p>
 
-    <form method="post">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
+    <form method="POST">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="email" name="email" placeholder="Email Address" required>
+
         <input type="number" name="age" placeholder="Age" required>
-        <input type="text" name="class" placeholder="Class / Year" required>
+
+        <input type="text" name="class_year" placeholder="Class / Year" required>
 
         <select name="gender" required>
             <option value="">Select Gender</option>
@@ -39,23 +46,19 @@
 
         <select name="interest" required>
             <option value="">Select Interest</option>
-            {% for item in interests %}
-                <option value="{{ item }}">{{ item }}</option>
-            {% endfor %}
+            <option>Programming</option>
+            <option>Artificial Intelligence</option>
+            <option>Data Science</option>
+            <option>Web Development</option>
+            <option>Cyber Security</option>
         </select>
 
-        <button type="submit">Generate Planner</button>
+        <button type="submit">Generate Learning Plan</button>
+
     </form>
-
-    {% if submitted %}
-    <div class="result">
-        <h2>Hello {{ data.name }} 👋</h2>
-        <p><b>Your Personalized Plan:</b></p>
-        <p>{{ plan }}</p>
-    </div>
-    {% endif %}
-
 </div>
 
 </body>
 </html>
+
+
