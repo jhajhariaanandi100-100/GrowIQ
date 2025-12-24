@@ -6,7 +6,9 @@
 </head>
 <body>
     <div class="container">
-        <img src="/static/logo.png" class="logo" alt="GrowIQ Logo">
+       
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GrowIQ Logo" class="logo">
+
         <h1>GrowIQ Study Planner</h1>
 
         <form action="/submit" method="POST">
