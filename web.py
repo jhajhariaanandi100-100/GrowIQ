@@ -2,39 +2,96 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-@app.route("/generate", methods=["POST"])
-def generate():
-    name = request.form["name"]
-    category = request.form["category"]
-    interest = request.form["interest"]
+@app.route('/result', methods=['POST'])
+def result():
+    name = request.form['name']
+    category = request.form['category']
+    stream = request.form['stream']
+    interest = request.form['interest']
 
-    # 📌 STUDY PLANS
-    school_plan = {
-        "math": ["Algebra - 1 hr", "Geometry - 45 mins", "Practice 15 questions"],
-        "science": ["Physics laws (1 hr)", "Chemistry formulas (45 mins)", "Biology revision (30 mins)"],
-        "arts": ["History (1 hr)", "Political Science (45 mins)", "Essay writing (30 mins)"],
-        "commerce": ["Accountancy basics", "Economics chapter review", "Business Studies summary"]
-    }
+    plan = []
 
-    engineering_plan = {
-        "cse": ["DSA (1 hr)", "Python (1 hr)", "DBMS (45 mins)", "Leetcode practice (30 mins)"],
-        "mechanical": ["Thermodynamics", "Machine Design", "Fluid Mechanics"],
-        "civil": ["Surveying", "AutoCAD practice", "Structural analysis"],
-        "ece": ["Digital electronics", "Microprocessors", "Analog circuits"],
-        "eee": ["Power systems", "Control systems", "Circuit theory"]
-    }
+    # ================= SCHOOL STUDENT =================
+    if category == "School Student":
 
-    # 📌 SELECT PLAN BASED ON CATEGORY
-    if category == "school":
-        final_plan = school_plan.get(interest, ["Study basics", "Revision", "Practice worksheets"])
-    else:
-        final_plan = engineering_plan.get(interest, ["General Engineering concepts", "Notes", "Study model papers"])
+        if stream == "Science":
+            if interest == "Medical":
+                plan = [
+                    "🧬 Biology – 2 hrs (NCERT + diagrams)",
+                    "⚗️ Chemistry – 1.5 hrs",
+                    "📘 Physics – 1.5 hrs (numericals)",
+                    "📅 Weekly: NEET practice questions"
+                ]
 
-    return render_template("result.html", name=name, plan=final_plan)
+            elif interest == "Engineering":
+                plan = [
+                    "📐 Maths – 2 hrs (problem solving)",
+                    "⚡ Physics – 1.5 hrs",
+                    "⚗️ Chemistry – 1 hr",
+                    "💻 Basic coding – 30 mins",
+                    "📅 Weekly: JEE mock tests"
+                ]
+
+        elif stream == "Commerce":
+            if interest == "Business":
+                plan = [
+                    "📊 Accountancy – 2 hrs",
+                    "📈 Economics – 1.5 hrs",
+                    "🏢 Business Studies – 1 hr",
+                    "🧠 Case studies on weekends"
+                ]
+
+        elif stream == "Arts":
+            if interest == "Civil Services":
+                plan = [
+                    "🌍 History & Geography – 2 hrs",
+                    "📜 Polity – 1.5 hrs",
+                    "📰 Current Affairs – 1 hr",
+                    "📝 Answer writing practice"
+                ]
+
+    # ================= COMPUTER SCIENCE STUDENT =================
+    elif category == "Computer Science Student":
+
+        if stream == "CSE":
+            if interest == "Web Development":
+                plan = [
+                    "🌐 HTML & CSS – 1 hr",
+                    "⚙️ JavaScript – 1.5 hrs",
+                    "🐍 Python / Flask – 1 hr",
+                    "💼 Weekly mini projects"
+                ]
+
+            elif interest == "Artificial Intelligence":
+                plan = [
+                    "📊 Python – 1 hr",
+                    "🧠 Machine Learning – 2 hrs",
+                    "📐 Maths for AI – 1 hr",
+                    "📁 AI mini project weekly"
+                ]
+
+            elif interest == "Cyber Security":
+                plan = [
+                    "🔐 Networking basics – 1 hr",
+                    "🖥️ Linux – 1 hr",
+                    "🛡️ Cyber tools – 1.5 hrs",
+                    "📅 Practice labs weekly"
+                ]
+
+        elif stream == "IT":
+            if interest == "Data Science":
+                plan = [
+                    "📊 Python & Pandas – 1.5 hrs",
+                    "📈 Statistics – 1 hr",
+                    "📉 Data Visualization – 1 hr",
+                    "📁 Real datasets practice"
+                ]
+
+    return render_template('result.html', name=name, plan=plan)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

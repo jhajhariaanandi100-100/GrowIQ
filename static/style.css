@@ -1,45 +1,78 @@
-body {
-    margin: 0;
-    background: #000000;
-    font-family: Arial, sans-serif;
+/* RESET */
+* {
+    box-sizing: border-box;
 }
 
+/* BODY */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MAIN CONTAINER */
 .container {
     width: 50%;
+    max-width: 600px;
     margin: 40px auto;
-    background: white;
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
 }
 
+/* LOGO */
 .logo {
-    width: 120px;
-    margin-bottom: 10px;
+    width: 130px;
+    height: auto;
+    margin: 0 auto 15px auto;
+    display: block;
 }
 
-input, select, button {
+/* HEADINGS */
+h1 {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+input,
+select {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
+    font-size: 15px;
 }
 
+/* BUTTON */
 button {
-    background: #000000;
-    color: white;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #000000;
+    background-color: #222222;
 }
 
+/* RESULT LIST */
 ul {
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
 }
 
 /* 📱 MOBILE RESPONSIVE */
@@ -54,6 +87,12 @@ ul {
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 22px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 14px;
     }
 }

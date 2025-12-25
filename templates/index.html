@@ -8,42 +8,39 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>GrowIQ Study Planner</h1>
-        <p class="tagline">Where Every Mind Matters</p>
+<div class="container">
 
-        <form action="/generate" method="POST">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" alt="GrowIQ Logo">
 
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="number" name="age" placeholder="Age" required>
-            <input type="text" name="class" placeholder="Class / Year" required>
+    <h1>GrowIQ Study Planner</h1>
+    <p class="tagline">Where Every Mind Matters</p>
 
-            <label>Category:</label>
-            <select name="category" required>
-                <option value="school">School Student</option>
-                <option value="engineering">Engineering Student</option>
-            </select>
+    <form action="/result" method="POST">
 
-            <label>Interest / Stream:</label>
-            <select name="interest" required>
-                <!-- School -->
-                <option value="math">Math</option>
-                <option value="science">Science</option>
-                <option value="arts">Arts</option>
-                <option value="commerce">Commerce</option>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="class" placeholder="Class / Year" required>
 
-                <!-- Engineering -->
-                <option value="cse">Computer Science</option>
-                <option value="mechanical">Mechanical</option>
-                <option value="civil">Civil</option>
-                <option value="ece">Electronics (ECE)</option>
-                <option value="eee">Electrical (EEE)</option>
-            </select>
+        <label>Category:</label>
+        <select name="category" required>
+            <option value="School Student">School Student</option>
+            <option value="Computer Science Student">Computer Science Student</option>
+        </select>
 
-            <button type="submit">Generate Planner</button>
-        </form>
-    </div>
+        <label>Interest / Stream:</label>
+        <select name="interest" required>
+            <option value="Math">Math</option>
+            <option value="Science">Science</option>
+            <option value="Arts">Arts</option>
+            <option value="Commerce">Commerce</option>
+            <option value="CSE">Computer Science</option>
+        </select>
+
+        <button type="submit">Generate Planner</button>
+    </form>
+
+</div>
 
 </body>
 </html>
