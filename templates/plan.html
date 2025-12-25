@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Study Plan</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Your Plan</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-
-<div class="container">
-    <h1>GrowIQ Study Plan</h1>
-
-    <p><b>Name:</b> {{ plan.name }}</p>
-    <p><b>Goal:</b> {{ plan.goal }}</p>
-    <p><b>Daily Study Time:</b> {{ plan.daily_time }} hrs</p>
-    <p><b>Learning Style:</b> {{ plan.learning_style }}</p>
-    <p><b>Weak Areas:</b> {{ plan.weak_areas }}</p>
-
-    <hr>
-
-    {% for step in plan.schedule %}
-        <p>👉 {{ step }}</p>
-    {% endfor %}
+<div class="plan-box">
+    <h2>🎯 Study Plan for {{data.name}}</h2>
+    <pre>{{plan}}</pre>
+    <a href="/"><button>Go Home</button></a>
 </div>
-
 </body>
 </html>
