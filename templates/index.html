@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GrowIQ</title>
+    <meta charset="UTF-8">
+    <title>GrowIQ - Smart Study Planner</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <div class="center">
-        <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+<body class="home">
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png.jpeg') }}" alt="Logo" class="logo">
         <h1>Welcome to GrowIQ</h1>
-        <p>Personalized Learning for Slow Learners & Supportive Students</p>
-        <a href="/form" class="btn">Start</a>
+        <p>Your Smart AI Assistant for Personalized Study Planning</p>
+        <a href="/form" class="btn">Start Planning</a>
     </div>
 </body>
 </html>
