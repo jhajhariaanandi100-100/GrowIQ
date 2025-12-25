@@ -1,66 +1,71 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    background: black;
-    color: white;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-.center {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
 }
 
-.logo {
-    width: 140px;
-    background: white;
-    padding: 12px;
-    border-radius: 14px;
-    margin-bottom: 20px;
-}
-
-.btn {
-    background: white;
-    color: black;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    margin-top: 20px;
-}
-
+/* Center container */
 .container {
-    width: 420px;
-    margin: 50px auto;
-}
-
-h1 {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
     text-align: center;
 }
 
+/* Logo */
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+p {
+    color: #dddddd;
+    margin-bottom: 20px;
+}
+
+/* Form */
+form {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Inputs */
 input, select, textarea {
     width: 100%;
     padding: 12px;
-    margin-bottom: 15px;
+    margin: 10px 0;
     border-radius: 6px;
     border: none;
     font-size: 14px;
 }
 
-textarea {
-    resize: none;
-    height: 80px;
-}
-
+/* Button */
 button {
     width: 100%;
     padding: 12px;
-    background: white;
+    background: #ffffff;
+    color: #000;
     border: none;
+    border-radius: 6px;
     font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
+}
+
+button:hover {
+    background: #dddddd;
 }

@@ -1,60 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Information</title>
+    <title>Student Details</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="container">
-    <h1>Student Information</h1>
+    <h2>Tell Us About You</h2>
 
-    <form action="/generate-plan" method="post">
+    <form method="POST" action="/generate-plan">
 
-        <input type="text" name="name" placeholder="Student Name" required>
-
-        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="name" placeholder="Your Full Name" required>
 
         <select name="student_type" required>
-            <option value="">Student Type</option>
+            <option value="">Who are you?</option>
             <option>School Student</option>
-            <option>Engineering Student</option>
+            <option>College Student</option>
         </select>
 
-        <select name="stream" required>
-            <option value="">Stream / Branch</option>
-            <option>Science (School)</option>
-            <option>Commerce (School)</option>
-            <option>Arts (School)</option>
-            <option>Computer Science Engineering</option>
-            <option>Mechanical Engineering</option>
-            <option>Electrical Engineering</option>
-            <option>Civil Engineering</option>
-            <option>Electronics & Communication</option>
-        </select>
+        <input type="text" name="stream" placeholder="Stream / Subjects (e.g. Science, CS)">
 
-        <select name="learning_style" required>
-            <option value="">Learning Style</option>
-            <option>Visual (videos, diagrams)</option>
-            <option>Auditory (listening)</option>
-            <option>Reading/Writing</option>
-            <option>Hands-on practice</option>
-        </select>
+        <input type="text" name="weak_areas" placeholder="Weak Areas (e.g. Maths, Coding)">
 
-        <select name="attention_span" required>
-            <option value="">Attention Span</option>
-            <option>10–20 minutes</option>
-            <option>20–30 minutes</option>
-            <option>30–45 minutes</option>
-        </select>
+        <input type="text" name="goal" placeholder="Your Goal (e.g. Crack Exam, Learn Python)">
 
-        <input type="number" name="daily_time" placeholder="Daily Study Time (hours)" required>
-
-        <textarea name="weak_areas" placeholder="Subjects you find difficult (example: Maths, Coding)" required></textarea>
-
-        <textarea name="goal" placeholder="Your Goal (example: Improve marks / Clear exams)" required></textarea>
+        <input type="number" name="daily_time" placeholder="Daily Study Time (hours)">
 
         <button type="submit">Generate Study Plan</button>
+
     </form>
 </div>
 
