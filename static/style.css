@@ -1,42 +1,56 @@
-/* Home Page */
-.home {
-    background-color: black;
+body {
+    margin: 0;
+    font-family: Arial;
+    background: black;
     color: white;
-    text-align: center;
+}
+
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.logo {
-    width: 200px;
-    margin-bottom: 20px;
+.center-box {
+    text-align: center;
 }
 
 .btn {
+    padding: 12px 25px;
     background: white;
     color: black;
-    padding: 12px 20px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
 }
 
-/* Form Page */
-.form-container {
-    width: 50%;
-    margin: auto;
-    background: #111;
-    padding: 30px;
-    color: white;
-    border-radius: 8px;
+.form-box {
+    width: 350px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
 }
 
-input, select {
+input, select, textarea, button {
+    margin: 8px 0;
+    padding: 10px;
     width: 100%;
-    height: 40px;
-    margin-bottom: 12px;
-    border-radius: 3px;
-    padding: 8px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 70px;
+}
+
+button {
+    background: white;
+    color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.plan-box {
+    width: 350px;
+    margin: 40px auto;
 }

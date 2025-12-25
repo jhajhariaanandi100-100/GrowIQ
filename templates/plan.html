@@ -5,10 +5,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<h2>✨ Personalized Plan for {{data.name}} ✨</h2>
-<pre>{{plan}}</pre>
 
-<a href="/form" class="btn">Generate Another Plan</a>
-<a href="/" class="btn">Home</a>
+<div class="plan-box">
+    <h2>GrowIQ Study Plan</h2>
+
+    <p><b>Name:</b> {{ plan.name }}</p>
+    <p><b>Goal:</b> {{ plan.goal }}</p>
+    <p><b>Daily Time:</b> {{ plan.daily_time }} hrs</p>
+    <p><b>Weak Areas:</b> {{ plan.weak }}</p>
+    <p><b>Learning Style:</b> {{ plan.learning }}</p>
+
+    <hr>
+
+    <p>📌 Focus on weak areas daily in short sessions.</p>
+    <p>📌 Use your learning style while studying.</p>
+    <p>📌 Review progress every Sunday.</p>
+
+</div>
+
 </body>
 </html>

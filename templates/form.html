@@ -1,78 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Study Planner Form</title>
+    <title>Student Details</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
-<div class="form-container">
-    <h2>Student Information</h2>
-    
-    <form action="/plan" method="POST">
 
-        <label>Name:</label>
-        <input type="text" name="name" placeholder="Enter your name">
+<form action="/generate-plan" method="POST" class="form-box">
 
-        <label>Age:</label>
-        <input type="number" name="age" min="8" max="40">
+<h2>Student Information</h2>
 
-        <label>Student Type:</label>
-        <select name="type">
-            <option>School Student</option>
-            <option>College Student</option>
-            <option>Competitive Exam Aspirant</option>
-        </select>
+<input name="name" placeholder="Student Name" required>
+<input name="age" placeholder="Age" required>
 
-        <label>Class / Year:</label>
-        <select name="class">
-            <option>6th - 8th</option>
-            <option>9th</option>
-            <option>10th</option>
-            <option>11th</option>
-            <option>12th</option>
-            <option>Undergraduate</option>
-        </select>
+<select name="student_type" required>
+    <option value="">Student Type</option>
+    <option>School Student</option>
+    <option>College Student</option>
+</select>
 
-        <label>Stream / Subjects:</label>
-        <select name="stream">
-            <option>Science (PCM / PCB)</option>
-            <option>Commerce</option>
-            <option>Humanities / Arts</option>
-            <option>Computer Science / IT</option>
-        </select>
+<select name="stream" required>
+    <option value="">Stream / Subject</option>
+    <option>Science</option>
+    <option>Math</option>
+    <option>Commerce</option>
+    <option>Arts</option>
+</select>
 
-        <label>Current Level:</label>
-        <select name="level">
-            <option>Beginner</option>
-            <option>Intermediate</option>
-            <option>Advanced</option>
-        </select>
+<select name="learning_style" required>
+    <option value="">How do you learn best?</option>
+    <option>Visual (videos, diagrams)</option>
+    <option>Auditory (listening)</option>
+    <option>Practical (doing)</option>
+</select>
 
-        <label>Daily Study Time (Hours):</label>
-        <input type="number" name="hours" min="1" max="12">
+<select name="attention_span" required>
+    <option value="">Attention Span</option>
+    <option>5–10 minutes</option>
+    <option>10–20 minutes</option>
+    <option>20+ minutes</option>
+</select>
 
-        <label>Learning Style:</label>
-        <select name="learning">
-            <option>Visual (Videos & Images)</option>
-            <option>Auditory (Listening & Discussion)</option>
-            <option>Kinesthetic (Practice by Doing)</option>
-        </select>
+<input name="daily_time" placeholder="Daily study time (hours)" required>
 
-        <label>Preferred Study Time:</label>
-        <select name="time">
-            <option>Morning (5AM - 10AM)</option>
-            <option>Afternoon (12PM - 4PM)</option>
-            <option>Evening (5PM - 9PM)</option>
-            <option>Night (10PM - 1AM)</option>
-        </select>
+<textarea name="weak_areas" placeholder="Which subjects feel difficult?"></textarea>
+<textarea name="goal" placeholder="What do you want to achieve?"></textarea>
 
-        <label>Goal:</label>
-        <input type="text" name="goal" placeholder="Eg: Score 90% in boards">
+<button type="submit">Generate Study Plan</button>
 
-        <button type="submit" class="btn">Generate My Study Plan</button>
-    </form>
-</div>
+</form>
+
 </body>
 </html>
