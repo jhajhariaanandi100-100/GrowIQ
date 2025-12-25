@@ -1,56 +1,66 @@
 body {
     margin: 0;
-    font-family: Arial;
+    padding: 0;
     background: black;
     color: white;
+    font-family: Arial, sans-serif;
 }
 
-.home {
+.center {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
-.center-box {
-    text-align: center;
+.logo {
+    width: 140px;
+    background: white;
+    padding: 12px;
+    border-radius: 14px;
+    margin-bottom: 20px;
 }
 
 .btn {
-    padding: 12px 25px;
     background: white;
     color: black;
+    padding: 12px 30px;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 6px;
+    margin-top: 20px;
 }
 
-.form-box {
-    width: 350px;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
+.container {
+    width: 420px;
+    margin: 50px auto;
 }
 
-input, select, textarea, button {
-    margin: 8px 0;
-    padding: 10px;
+h1 {
+    text-align: center;
+}
+
+input, select, textarea {
     width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
     font-size: 14px;
 }
 
 textarea {
-    height: 70px;
+    resize: none;
+    height: 80px;
 }
 
 button {
+    width: 100%;
+    padding: 12px;
     background: white;
-    color: black;
     border: none;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-}
-
-.plan-box {
-    width: 350px;
-    margin: 40px auto;
 }

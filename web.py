@@ -20,19 +20,27 @@ def generate_plan():
     # Save data
     students = []
     if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "r") as f:
+        with open(DATA_FILE) as f:
             students = json.load(f)
 
     students.append(data)
     with open(DATA_FILE, "w") as f:
         json.dump(students, f, indent=4)
 
+    # PERSONALIZED PLAN LOGIC
     plan = {
         "name": data["name"],
         "goal": data["goal"],
         "daily_time": data["daily_time"],
-        "weak": data["weak_areas"],
-        "learning": data["learning_style"]
+        "learning_style": data["learning_style"],
+        "weak_areas": data["weak_areas"],
+        "schedule": [
+            f"📌 Study {data['weak_areas']} first when your mind is fresh.",
+            f"⏳ Study in {data['attention_span']} focused sessions.",
+            f"🎧 Use {data['learning_style']} learning methods.",
+            "📝 Revise daily & test weekly.",
+            "🌱 Celebrate small progress every week."
+        ]
     }
 
     return render_template("plan.html", plan=plan)

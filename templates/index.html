@@ -4,13 +4,14 @@
     <title>GrowIQ</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="home">
+<body>
 
-    <div class="center-box">
-        <h1>GrowIQ</h1>
-        <p>Personalized Learning for Every Mind</p>
-        <a href="/form" class="btn">Start</a>
-    </div>
+<div class="center">
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+    <h1>GrowIQ</h1>
+    <p>Personalized Learning for Every Mind</p>
+    <a href="/form" class="btn">Start</a>
+</div>
 
 </body>
 </html>

@@ -6,21 +6,20 @@
 </head>
 <body>
 
-<div class="plan-box">
-    <h2>GrowIQ Study Plan</h2>
+<div class="container">
+    <h1>GrowIQ Study Plan</h1>
 
     <p><b>Name:</b> {{ plan.name }}</p>
     <p><b>Goal:</b> {{ plan.goal }}</p>
-    <p><b>Daily Time:</b> {{ plan.daily_time }} hrs</p>
-    <p><b>Weak Areas:</b> {{ plan.weak }}</p>
-    <p><b>Learning Style:</b> {{ plan.learning }}</p>
+    <p><b>Daily Study Time:</b> {{ plan.daily_time }} hrs</p>
+    <p><b>Learning Style:</b> {{ plan.learning_style }}</p>
+    <p><b>Weak Areas:</b> {{ plan.weak_areas }}</p>
 
     <hr>
 
-    <p>📌 Focus on weak areas daily in short sessions.</p>
-    <p>📌 Use your learning style while studying.</p>
-    <p>📌 Review progress every Sunday.</p>
-
+    {% for step in plan.schedule %}
+        <p>👉 {{ step }}</p>
+    {% endfor %}
 </div>
 
 </body>
