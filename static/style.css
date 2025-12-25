@@ -1,98 +1,31 @@
-/* RESET */
-* {
-    box-sizing: border-box;
-}
-
-/* BODY */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* MAIN CONTAINER */
-.container {
-    width: 50%;
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
+    background: #ffffff;
+    color: #000;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
-/* LOGO */
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+button, .btn {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
 .logo {
-    width: 130px;
+    width: 200px;
     height: auto;
-    margin: 0 auto 15px auto;
-    display: block;
 }
 
-/* HEADINGS */
-h1 {
-    color: #000000;
-    margin-bottom: 20px;
-}
-
-/* INPUTS */
-input,
-select {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 6px;
-    border: 1px solid #000000;
-    font-size: 15px;
-}
-
-/* BUTTON */
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #222222;
-}
-
-/* RESULT LIST */
-ul {
-    text-align: left;
-    font-size: 16px;
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-/* 📱 MOBILE RESPONSIVE */
-@media (max-width: 600px) {
-    .container {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .logo {
-        width: 100px;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    input,
-    select,
-    button {
-        font-size: 14px;
-    }
+.center {
+    margin-top: 50px;
 }

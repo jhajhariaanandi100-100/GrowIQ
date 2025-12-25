@@ -1,46 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowIQ</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>GrowIQ Planner</title>
 </head>
 <body>
-
-<div class="container">
-
-    <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" alt="GrowIQ Logo">
-
-    <h1>GrowIQ Study Planner</h1>
-    <p class="tagline">Where Every Mind Matters</p>
-
-    <form action="/result" method="POST">
-
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="number" name="age" placeholder="Age" required>
-        <input type="text" name="class" placeholder="Class / Year" required>
-
-        <label>Category:</label>
-        <select name="category" required>
-            <option value="School Student">School Student</option>
-            <option value="Computer Science Student">Computer Science Student</option>
-        </select>
-
-        <label>Interest / Stream:</label>
-        <select name="interest" required>
-            <option value="Math">Math</option>
-            <option value="Science">Science</option>
-            <option value="Arts">Arts</option>
-            <option value="Commerce">Commerce</option>
-            <option value="CSE">Computer Science</option>
-        </select>
-
-        <button type="submit">Generate Planner</button>
-    </form>
-
-</div>
-
+    <div class="center">
+        <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+        <h1>Welcome to GrowIQ</h1>
+        <p>Personalized Learning for Slow Learners & Supportive Students</p>
+        <a href="/form" class="btn">Start</a>
+    </div>
 </body>
 </html>
