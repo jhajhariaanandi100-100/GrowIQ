@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Your Study Plan</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Your Plan</title>
 </head>
 <body>
+
     <div class="container">
-        <h1>✨ Your Study Plan, {{name}} ✨</h1>
-        <pre>{{ plan }}</pre>
-        <a class="back" href="/">🔙 Go Back</a>
+        <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="GrowIQ Logo">
+        <h2>Hello {{ name }} 👋</h2>
+        <h3>Your Personalized Study Planner:</h3>
+
+        <ul>
+            {% for item in plan %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/">⬅ Go Back</a>
     </div>
+
 </body>
 </html>

@@ -1,58 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GrowIQ Study Planner</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>GrowIQ Planner</title>
 </head>
 <body>
+
     <div class="container">
-       
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GrowIQ Logo">
-
-        
         <h1>GrowIQ Study Planner</h1>
+        <p class="tagline">Where Every Mind Matters</p>
 
-        <form action="/submit" method="POST">
+        <form action="/generate" method="POST">
 
-            <label>Name:</label>
-            <input type="text" name="name" required>
-
-            <label>Email:</label>
-            <input type="email" name="email" required>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="class" placeholder="Class / Year" required>
 
             <label>Category:</label>
             <select name="category" required>
                 <option value="school">School Student</option>
-                <option value="cs">Computer Science Student</option>
+                <option value="engineering">Engineering Student</option>
             </select>
 
-            <label>Age:</label>
-            <input type="number" name="age" required>
-
-            <label>Class (for School):</label>
-            <input type="text" name="class" placeholder="eg: 10th / B.Tech 1st Yr">
-
-            <label>Interest:</label>
+            <label>Interest / Stream:</label>
             <select name="interest" required>
-                <option>Math</option>
-                <option>Science</option>
-                <option>English</option>
-                <option>Web Development</option>
-                <option>Artificial Intelligence</option>
-                <option>Cyber Security</option>
-                <option>App Development</option>
-                <option>Robotics</option>
+                <!-- School -->
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="arts">Arts</option>
+                <option value="commerce">Commerce</option>
+
+                <!-- Engineering -->
+                <option value="cse">Computer Science</option>
+                <option value="mechanical">Mechanical</option>
+                <option value="civil">Civil</option>
+                <option value="ece">Electronics (ECE)</option>
+                <option value="eee">Electrical (EEE)</option>
             </select>
 
-            <label>Difficulty Level:</label>
-            <select name="difficulty" required>
-                <option>easy</option>
-                <option>medium</option>
-                <option>hard</option>
-            </select>
-
-            <button type="submit">Generate Plan 🚀</button>
+            <button type="submit">Generate Planner</button>
         </form>
     </div>
+
 </body>
 </html>
