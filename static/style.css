@@ -1,3 +1,9 @@
+.logo {
+    width: 120px;   /* change size here */
+    height: auto;   /* keeps aspect ratio */
+    display: block;
+    margin: 0 auto; /* centers the logo */
+}
 body {
     background: #000;
     color: #fff;
