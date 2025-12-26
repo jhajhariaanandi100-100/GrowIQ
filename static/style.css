@@ -27,27 +27,27 @@ body {
 /* -----------------------
    FORM PAGE ONLY
 ------------------------ */
+
 .form-page {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: black;
 }
 
 .form-container {
   background: #111;
-  padding: 30px;
+  padding: 25px;
   border-radius: 10px;
-  text-align: center;
   width: 400px;
+  text-align: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 20px;
 }
 
 input, select {

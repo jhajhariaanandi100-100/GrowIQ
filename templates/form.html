@@ -1,34 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Student Form</title>
+</head>
+
 <body class="form-page">
-  <div class="form-container">
-    <h2>Tell us about yourself</h2>
 
-    <form action="/generate-plan" method="POST">
+    <div class="form-container">
 
-      <input type="text" name="name" placeholder="Full Name" required>
+        <h2>Tell us about yourself</h2>
 
-      <select name="stream" required>
-        <option value="">Select Stream</option>
-        <option>Science</option>
-        <option>Commerce</option>
-        <option>Arts</option>
-        <option>Computer Science / IT</option>
-      </select>
+        <form action="/generate-plan" method="POST">
 
-      <input type="text" name="weak_areas" placeholder="Weak Subjects / Topics">
+            <input type="text" name="name" placeholder="Full Name" required>
 
-      <input type="text" name="goal" placeholder="Example: CGPA 8+, top ranks, coding skills">
+            <select name="stream" required>
+                <option value="">Select Stream</option>
+                <option>Science</option>
+                <option>Commerce</option>
+                <option>Arts</option>
+                <option>Computer Science / IT</option>
+            </select>
 
-      <input type="number" name="daily_time" placeholder="Daily Study Hours" min="1" required>
+            <input type="text" name="weak_areas" placeholder="Weak Subjects / Topics">
 
-      <select name="learning_style">
-        <option value="">Learning Style</option>
-        <option>Visual</option>
-        <option>Auditory</option>
-        <option>Reading/Writing</option>
-        <option>Kinesthetic (Hands-on)</option>
-      </select>
+            <input type="text" name="goal" placeholder="Example: CGPA 8+, top ranks, coding skills">
 
-      <button type="submit">Generate Study Plan</button>
-    </form>
-  </div>
+            <input type="number" name="daily_time" placeholder="Daily Study Hours" min="1" required>
+
+            <select name="learning_style" required>
+                <option value="">Learning Style</option>
+                <option>Visual</option>
+                <option>Auditory</option>
+                <option>Reading/Writing</option>
+                <option>Kinesthetic (Hands-on)</option>
+            </select>
+
+            <button type="submit">Generate Study Plan</button>
+
+        </form>
+
+    </div>
+
 </body>
+</html>
