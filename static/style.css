@@ -1,53 +1,44 @@
-.logo {
-    width: 120px;   /* change size here */
-    height: auto;   /* keeps aspect ratio */
-    display: block;
-    margin: 0 auto; /* centers the logo */
-}
+/* ---------- GENERAL PAGE LAYOUT ---------- */
 body {
-    background: #000;
-    color: #fff;
+    background-color: #000;
+    color: white;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    margin-top: 15%;
 }
 
-button {
-    padding: 10px 30px;
-    background: white;
-    color: black;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #ddd;
-}
-
-.form-container {
-    width: 350px;
-    margin: 5% auto;
+/* ---------- CENTER CONTAINER ---------- */
+.container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
 }
 
-input, select {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+/* ---------- LOGO ---------- */
+.logo {
+    width: 200px;    /* Increase size */
+    height: auto;
+    margin-bottom: 10px;
 }
 
-.plan-box {
-    width: 80%;
-    margin: 40px auto;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
+/* ---------- BUTTON ---------- */
+button, .btn {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+    background: #e0e0e0;
 }
