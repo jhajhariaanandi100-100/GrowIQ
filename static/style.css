@@ -1,65 +1,73 @@
-/* Reset page layout only for form page */
-form {
-    display: flex;
-    flex-direction: column; /* Make fields vertical */
-    align-items: center; /* Center in middle */
-    gap: 15px; /* spacing between fields */
-}
-
-/* Input + Select fields styling */
-input, select {
-    width: 300px;
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-    font-size: 16px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-/* ---------- GENERAL PAGE LAYOUT ---------- */
+/* GENERAL (all pages) */
 body {
-    background-color: #000;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
 }
 
-/* ---------- CENTER CONTAINER ---------- */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+/* -----------------------
+   HOME PAGE ONLY
+------------------------ */
+.homepage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* ---------- LOGO ---------- */
-.logo {
-    width: 200px;    /* Increase size */
-    height: auto;
-    margin-bottom: 10px;
+.homepage .logo {
+  width: 200px;
+  margin-bottom: 20px;
 }
 
-/* ---------- BUTTON ---------- */
-button, .btn {
-    background: white;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
+/* -----------------------
+   FORM PAGE ONLY
+------------------------ */
+.form-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-button:hover, .btn:hover {
-    background: #e0e0e0;
+.form-container {
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ddd;
 }

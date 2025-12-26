@@ -1,7 +1,5 @@
-<body>
-  <div class="container">
-    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Logo">
-
+<body class="form-page">
+  <div class="form-container">
     <h2>Tell us about yourself</h2>
 
     <form action="/generate-plan" method="POST">
@@ -18,21 +16,19 @@
 
       <input type="text" name="weak_areas" placeholder="Weak Subjects / Topics">
 
-      <input type="text" name="goal" placeholder="Your Goal (Example: CGPA 8+, Top Scores)">
+      <input type="text" name="goal" placeholder="Example: CGPA 8+, top ranks, coding skills">
 
       <input type="number" name="daily_time" placeholder="Daily Study Hours" min="1" required>
 
       <select name="learning_style">
         <option value="">Learning Style</option>
-        <option>Visual Learner</option>
-        <option>Auditory Learner</option>
-        <option>Kinesthetic Learner (Hands-on)</option>
-        <option>Reading / Writing Focused</option>
+        <option>Visual</option>
+        <option>Auditory</option>
+        <option>Reading/Writing</option>
+        <option>Kinesthetic (Hands-on)</option>
       </select>
 
       <button type="submit">Generate Study Plan</button>
     </form>
   </div>
 </body>
-
-
