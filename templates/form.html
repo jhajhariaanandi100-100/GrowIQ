@@ -1,42 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student Form</title>
-    <link rel="stylesheet" href="../static/style.css">
-</head>
 <body>
-<h2 style="text-align:center;">Tell us about yourself</h2>
+  <div class="container">
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Logo">
 
-<form action="/generate-plan" method="POST" class="form-container">
+    <h2>Tell us about yourself</h2>
 
-<input type="text" name="name" placeholder="Full Name" required>
+    <form action="/generate-plan" method="POST">
 
-<select name="stream" required>
-  <option value="">Select Stream</option>
-  <option>Science</option>
-  <option>Commerce</option>
-  <option>Arts</option>
-  <option>Engineering / BTech / CS</option>
-  <option>Medical / NEET</option>
-</select>
+      <input type="text" name="name" placeholder="Full Name" required>
 
-<input type="text" name="weak_areas" placeholder="Weak Subjects/Topics">
+      <select name="stream" required>
+        <option value="">Select Stream</option>
+        <option>Science</option>
+        <option>Commerce</option>
+        <option>Arts</option>
+        <option>Computer Science / IT</option>
+      </select>
 
-<input type="text" name="goal" placeholder="Your Goal (Example: Score 90% / Crack NEET)" required>
+      <input type="text" name="weak_areas" placeholder="Weak Subjects / Topics">
 
-<input type="number" name="daily_time" placeholder="Daily Study Hours" min="1" max="12" required>
+      <input type="text" name="goal" placeholder="Your Goal (Example: CGPA 8+, Top Scores)">
 
-<select name="learning_style" required>
-  <option value="">Learning Style</option>
-  <option>Visual (Videos/Diagrams)</option>
-  <option>Auditory (Listening)</option>
-  <option>Reading/Writing</option>
-  <option>Kinesthetic (Hands-on)</option>
-</select>
+      <input type="number" name="daily_time" placeholder="Daily Study Hours" min="1" required>
 
-<button type="submit">Generate Study Plan</button>
-</form>
+      <select name="learning_style">
+        <option value="">Learning Style</option>
+        <option>Visual Learner</option>
+        <option>Auditory Learner</option>
+        <option>Kinesthetic Learner (Hands-on)</option>
+        <option>Reading / Writing Focused</option>
+      </select>
 
+      <button type="submit">Generate Study Plan</button>
+    </form>
+  </div>
 </body>
-</html>
+
 
