@@ -20,7 +20,7 @@ body {
 }
 .logo {
   display: block;
-  width: 300px; /* change size as needed */
+  width: 280px; /* change size as needed */
   margin: 0 auto;
   mix-blend-mode: screen;
 }
