@@ -20,14 +20,14 @@ body {
 }
 .logo {
   display: block;
-  width: 180px; /* change size as needed */
+  width: 320px; /* change size as needed */
   margin: 0 auto;
   mix-blend-mode: screen;
 }
+
 img {
   filter: drop-shadow(0 0 4px rgba(255,255,255,0.2));
 }
-
 
 
 /* -----------------------
