@@ -18,16 +18,9 @@ body {
   align-items: center;
   text-align: center;
 }
-/*
-.logo {
-  display: block;
-  width: 280px;*/ /* change size as needed */
-  /* margin: 0 auto;
-  mix-blend-mode: screen;
-}
-*/
+
 .main-logo {
-    width: 220px;      /* adjust as needed */
+    width: 260px;      
     display: block;
     margin: 30px auto;
 }
@@ -41,49 +34,41 @@ img {
    FORM PAGE ONLY
 ------------------------ */
 
-.form-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: black;
-}
-
 .form-container {
   background: #111;
   padding: 25px;
   border-radius: 10px;
-  width: 400px;
+  width: 420px;                   
   text-align: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
-input, select {
+input, select, button {
   width: 100%;
-  padding: 10px;
-  border-radius: 6px;
+  height: 55px;                  
+  font-size: 18px;                
+  border-radius: 8px;
   border: none;
-  font-size: 16px;
+  padding: 0 12px;
+  box-sizing: border-box;        
 }
 
 button {
-  padding: 10px;
-  border: none;
   background: white;
   color: black;
   font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
 }
 
 button:hover {
   background: #ddd;
 }
+
 /* Center the whole page vertically + horizontally */
 body {
     display: flex;
@@ -109,6 +94,6 @@ body {
 /* Make <pre> text readable */
 .plan-box pre {
     text-align: left;
-    white-space: pre-wrap;    /* allows wrapping instead of big lines */
+    white-space: pre-wrap;   
 }
 
