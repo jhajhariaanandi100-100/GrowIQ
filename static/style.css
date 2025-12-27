@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #000;
+  background: #000000;
   color: white;
 }
 
@@ -18,11 +18,13 @@ body {
   align-items: center;
   text-align: center;
 }
-
-.homepage .logo {
-  width: 200px;
-  margin-bottom: 20px;
+.logo {
+  display: block;
+  width: 180px; /* change size as needed */
+  margin: 0 auto;
+  mix-blend-mode: screen;
 }
+
 
 /* -----------------------
    FORM PAGE ONLY
