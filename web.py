@@ -8,9 +8,9 @@ app = Flask(__name__)
 DATA_FILE = "students.json"
 
 # --- 🟢 ZONE 1: AZURE CONFIGURATION ---
-# Replace these with your info from the "Keys and Endpoint" tab in Azure Portal
-AZURE_KEY = "ERtk3J5e3N2ri6NRNgXTBdGGiLGLoR6PYrHLa3qiVIGX5sDu4MtNJQQJ99CAACNns7RXJ3w3AAAaACOG0PKy" 
-AZURE_ENDPOINT = "https://growiq-language.cognitiveservices.azure.com/"
+# We now get these safely from Environment Variables
+AZURE_KEY = os.environ.get("AZURE_KEY") 
+AZURE_ENDPOINT = os.environ.get("AZURE_ENDPOINT")
 
 def get_ai_summary(text):
     """This function sends your data to the Azure AI you tested in Language Studio"""
