@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Plan</title>
+    <title>Your GrowIQ Plan</title>
     <link rel="stylesheet" href="../static/style.css">
+    <style>
+        /* Added these styles to make the AI section look professional */
+        .ai-insight-container {
+            background-color: #f0f7ff;
+            border-left: 5px solid #0078d4;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+        }
+        .ai-label {
+            font-weight: bold;
+            color: #0078d4;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        pre {
+            white-space: pre-wrap; /* Essential to keep your emojis and line breaks */
+            word-wrap: break-word;
+            font-family: inherit;
+            font-size: 1.1em;
+        }
+    </style>
 </head>
 <body>
 <div class="plan-box">
     <h2>🎯 Study Plan for {{data.name}}</h2>
-    <pre>{{plan}}</pre>
+    
+    <div class="ai-insight-container">
+        <span class="ai-label">✨ Azure AI Analysis</span>
+        <pre>{{plan}}</pre>
+    </div>
+
     <a href="/"><button>Go Home</button></a>
 </div>
 </body>
