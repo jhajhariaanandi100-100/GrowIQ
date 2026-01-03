@@ -1,44 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Your GrowIQ Plan</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>GrowIQ - Your Plan</title>
     <style>
-        /* Added these styles to make the AI section look professional */
-        .ai-insight-container {
-            background-color: #000000;
-            border-left: 5px solid #0078d4;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; padding: 20px; text-align: center; }
+        .plan-box { max-width: 800px; margin: 40px auto; background: #111; padding: 40px; border-radius: 20px; border: 1px solid #333; box-shadow: 0 0 20px rgba(255,255,255,0.05); }
+        
+        /* 🌟 MODERN AI INSIGHT BOX */
+        .ai-card { 
+            background: linear-gradient(145deg, #1a1a1a, #000);
+            border: 1px solid #fff; /* White border for high contrast */
+            padding: 25px; 
+            border-radius: 12px; 
+            margin: 30px 0; 
             text-align: left;
+            box-shadow: 0 0 15px rgba(255,255,255,0.1);
         }
-        .ai-label {
-            font-weight: bold;
-            color: #0078d4;
-            display: block;
-            margin-bottom: 5px;
-            font-size: 0.9em;
-            text-transform: uppercase;
-        }
-        pre {
-            white-space: pre-wrap; /* Essential to keep your emojis and line breaks */
-            word-wrap: break-word;
-            font-family: inherit;
-            font-size: 1.1em;
-        }
+        .ai-header { color: #fff; font-weight: bold; margin-bottom: 15px; font-size: 1.2em; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #333; display: inline-block; padding-bottom: 5px; }
+        
+        pre { white-space: pre-wrap; font-family: 'Consolas', monospace; font-size: 1.1em; color: #ddd; margin: 0; line-height: 1.6; }
+        
+        .btn { display: inline-block; margin: 10px; padding: 12px 30px; background: #fff; color: #000; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #888; color: #fff; }
     </style>
 </head>
 <body>
-<div class="plan-box">
-    <h2>🎯 Study Plan for {{data.name}}</h2>
-    
-    <div class="ai-insight-container">
-        <span class="ai-label">✨ Azure AI Analysis</span>
-        <pre>{{plan}}</pre>
-    </div>
+    <div class="plan-box">
+        <h1>TARGET ACQUIRED: {{data.name.upper()}}</h1>
+        
+        <div class="ai-card">
+            <div class="ai-header">✨ AZURE AI SYSTEM INSIGHT</div>
+            <pre>{{plan}}</pre>
+        </div>
 
-    <a href="/"><button>Go Home</button></a>
-</div>
+        <a href="/form" class="btn">NEW MISSION</a>
+        <a href="/" class="btn" style="background: none; border: 1px solid #fff; color: #fff;">HOME</a>
+    </div>
 </body>
 </html>
