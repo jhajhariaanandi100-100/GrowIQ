@@ -1,35 +1,93 @@
-<style>
-    body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; min-height: 100vh; margin: 0; display: flex; align-items: center; justify-content: center; }
-    
-    .plan-container { 
-        width: 90%; 
-        max-width: 1000px; /* This makes it wider than your current one */
-        background: #111; 
-        border: 1px solid #333; 
-        padding: 40px; 
-        border-radius: 20px; 
-        box-shadow: 0 0 50px rgba(255,255,255,0.05);
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowIQ - Intelligence Report</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; 
+            padding: 20px; 
+            min-height: 100vh;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
 
-    h1 { font-size: 2rem; letter-spacing: 2px; text-align: center; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 15px; }
+        /* 🚀 LARGE DASHBOARD CONTAINER */
+        .plan-container {
+            width: 95%; 
+            max-width: 1000px; 
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 50px rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
 
-    .ai-card { 
-        background: #1a1a1a; 
-        border-left: 5px solid #fff; 
-        padding: 30px; 
-        border-radius: 12px; 
-        margin-bottom: 30px;
-    }
+        h1 { 
+            font-size: 1.8rem; 
+            letter-spacing: 3px; 
+            border-bottom: 1px solid #222; 
+            padding-bottom: 20px; 
+            margin-bottom: 30px; 
+            color: #fff;
+        }
 
-    pre { 
-        white-space: pre-wrap; 
-        font-size: 1.2rem; /* Much bigger and easier to read */
-        line-height: 1.8; 
-        color: #ddd; 
-    }
+        /* 📊 AI CONTENT BOX */
+        .ai-result-area {
+            background: #1a1a1a;
+            border-left: 6px solid #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+            margin-bottom: 30px;
+            min-height: 350px; /* Forces it to be tall */
+        }
 
-    .btn { 
-        display: block; width: 200px; margin: 0 auto; background: #fff; color: #000; 
-        padding: 15px; border-radius: 50px; text-align: center; text-decoration: none; font-weight: bold; 
-    }
-</style>
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 1.2rem; /* Big and readable */
+            line-height: 1.8;
+            color: #ddd;
+            margin: 0;
+            font-family: inherit;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="plan-container">
+        <h1>INTELLIGENCE REPORT: {{ data.name.upper() }}</h1>
+        
+        <div class="ai-result-area">
+            <pre>{{ plan }}</pre>
+        </div>
+
+        <a href="/form" class="btn">New Analysis</a>
+    </div>
+
+</body>
+</html>
