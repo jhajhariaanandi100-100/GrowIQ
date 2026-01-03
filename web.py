@@ -87,37 +87,23 @@ def generate_dynamic_plan(data, ai_insight):
 
 
 # --- 🟡 ZONE 3: WEBSITE ROUTES ---
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-@app.route("/form")
-def form():
-    return render_template("form.html")
-
 @app.route("/generate-plan", methods=["POST"])
 def generate_plan():
-    data = request.form.to_dict()
+    try:
+        data = request.form.to_dict()
+        
+        # This prevents the crash if data is missing
+        if not data.get('weak_areas'):
+            return "Please describe your challenges so the AI can help!", 400
 
-    # Save data to your JSON file
-    students = []
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "r") as f:
-            students = json.load(f)
-    students.append(data)
-    with open(DATA_FILE, "w") as f:
-        json.dump(students, f, indent=4)
+        # Call Azure AI
+        ai_insight = get_ai_summary(data['weak_areas'])
 
-    # STEP A: Get the AI's professional summary of the 'weak_areas'
-    ai_insight = get_ai_summary(data.get('weak_areas', ''))
+        # Generate Plan
+        plan = generate_dynamic_plan(data, ai_insight)
 
-    # STEP B: Build the full plan using that insight
-    plan = generate_dynamic_plan(data, ai_insight)
-
-    return render_template("plan.html", plan=plan, data=data)
-
-
-if __name__ == "__main__":
-    # This part helps it run on the web or locally
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+        return render_template("plan.html", plan=plan, data=data)
+    except Exception as e:
+        # This tells you EXACTLY what went wrong in the Render logs
+        print(f"CRITICAL ERROR: {e}")
+        return f"System Error: {e}", 500
