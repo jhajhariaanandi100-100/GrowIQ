@@ -1,41 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>GrowIQ - Your Plan</title>
+    <title>GrowIQ Plan</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; padding: 20px; text-align: center; }
-        .plan-box { max-width: 800px; margin: 40px auto; background: #111; padding: 40px; border-radius: 20px; border: 1px solid #333; box-shadow: 0 0 20px rgba(255,255,255,0.05); }
-        
-        /* 🌟 MODERN AI INSIGHT BOX */
-        .ai-card { 
-            background: linear-gradient(145deg, #1a1a1a, #000);
-            border: 1px solid #fff; /* White border for high contrast */
-            padding: 25px; 
-            border-radius: 12px; 
-            margin: 30px 0; 
-            text-align: left;
-            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+        body { background: #000; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .plan-box { width: 90%; max-width: 500px; background: #111; border: 1px solid #333; padding: 15px; border-radius: 12px; text-align: center; }
+        /* This fixes the scroll issue */
+        .ai-content { 
+            background: #222; padding: 10px; border-radius: 8px; margin: 10px 0;
+            max-height: 250px; overflow-y: auto; text-align: left; border-left: 4px solid #fff;
         }
-        .ai-header { color: #fff; font-weight: bold; margin-bottom: 15px; font-size: 1.2em; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #333; display: inline-block; padding-bottom: 5px; }
-        
-        pre { white-space: pre-wrap; font-family: 'Consolas', monospace; font-size: 1.1em; color: #ddd; margin: 0; line-height: 1.6; }
-        
-        .btn { display: inline-block; margin: 10px; padding: 12px 30px; background: #fff; color: #000; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: #888; color: #fff; }
+        pre { white-space: pre-wrap; font-size: 0.9em; color: #ccc; margin: 0; }
+        .btn { display: inline-block; padding: 8px 20px; background: #fff; color: #000; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.8em; }
     </style>
 </head>
 <body>
     <div class="plan-box">
-        <h1>TARGET ACQUIRED: {{data.name.upper()}}</h1>
-        
-        <div class="ai-card">
-            <div class="ai-header">✨ AZURE AI SYSTEM INSIGHT</div>
+        <h3>MISSION PLAN: {{data.name.upper()}}</h3>
+        <div class="ai-content">
             <pre>{{plan}}</pre>
         </div>
-
-        <a href="/form" class="btn">NEW MISSION</a>
-        <a href="/" class="btn" style="background: none; border: 1px solid #fff; color: #fff;">HOME</a>
+        <a href="/form" class="btn">NEW PLAN</a>
     </div>
 </body>
 </html>
