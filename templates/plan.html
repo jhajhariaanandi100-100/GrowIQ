@@ -1,44 +1,67 @@
-<style>
-    body { 
-        background-color: #000; color: #fff; font-family: sans-serif;
-        margin: 0; padding: 10px; min-height: 100vh;
-        display: flex; align-items: center; justify-content: center;
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 1. RESET: Ensures no weird hidden overlaps */
+        body { 
+            background: #000; color: #fff; font-family: sans-serif; 
+            margin: 0; padding: 15px; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+        }
 
-    .plan-container {
-        width: 90%; 
-        max-width: 600px; /* Reduced width to stop horizontal stretching */
-        background: #111;
-        border: 1px solid #333;
-        border-radius: 15px;
-        padding: 25px; /* Reduced padding to save vertical space */
-        text-align: center;
-    }
+        /* 2. THE CONTAINER: Reduced width and height for your screen */
+        .plan-box {
+            width: 95%; 
+            max-width: 550px; /* Perfectly sized to avoid scrolling */
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box; /* Fixes "Black Screen" overflow issues */
+        }
 
-    .ai-result-area {
-        background: #1a1a1a;
-        border-left: 4px solid #fff;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: left;
-        margin-bottom: 20px;
-        /* Removed min-height so it only takes the space it needs */
-    }
+        h2 { font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 15px; }
 
-    pre {
-        white-space: pre-wrap;
-        font-size: 1rem; /* Slightly smaller font to fit more on screen */
-        line-height: 1.5;
-        color: #ddd;
-        margin: 0;
-    }
+        /* 3. THE AI TEXT AREA: Set to wrap text automatically */
+        .content-area {
+            background: #1a1a1a;
+            border-left: 4px solid #fff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
 
-    .btn {
-        display: inline-block;
-        background: #fff; color: #000;
-        padding: 12px 30px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-</style>
+        pre {
+            white-space: pre-wrap; /* Wraps text so it doesn't push the screen wide */
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #ccc;
+            margin: 0;
+            font-family: inherit;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #fff; color: #000;
+            padding: 10px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="plan-box">
+        <h2>MISSION PLAN: {{ data.name.upper() }}</h2>
+        <div class="content-area">
+            <pre>{{ plan }}</pre>
+        </div>
+        <a href="/form" class="btn">NEW PLAN</a>
+    </div>
+</body>
+</html>
