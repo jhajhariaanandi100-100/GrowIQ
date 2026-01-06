@@ -43,11 +43,11 @@ def generate_dynamic_plan(data, ai_insight):
     
     # Building the plan with a professional 'Report' structure
     plan_blocks = [
-        f"### 🎯 GROWIQ ACADEMIC DIAGNOSTIC",
-        f"**AI Insight:** {ai_insight}",
-        "---",
-        f"**Stream:** {stream}",
-        "**Core Objectives:**"
+        f"🎯 GROWIQ ACADEMIC DIAGNOSTIC",
+        f"AI Insight: {ai_insight}",
+        "---------------------------------",
+        f"Stream: {stream}",
+        "Core Objectives:"
     ]
 
     # Logical Subject Routing
@@ -67,8 +67,8 @@ def generate_dynamic_plan(data, ai_insight):
         plan_blocks.append("• Immersion: Focus on mock tests and peer teaching for advanced mastery.")
 
     # Standard Professional Footer
-    plan_blocks.append("\n**📅 WEEKLY MILESTONES**")
-    plan_blocks.append("1. **Mon-Wed:** Attack the 'Hard' topics first.\n2. **Thu-Fri:** Revision and self-testing.\n3. **Weekend:** Rest and review progress.")
+    plan_blocks.append("\n📅 WEEKLY MILESTONES")
+    plan_blocks.append("1. Mon-Wed: Attack the 'Hard' topics first.\n2. Thu-Fri: Revision and self-testing.\n3. Weekend: Rest and review progress.")
 
     return "\n".join(plan_blocks)
 
