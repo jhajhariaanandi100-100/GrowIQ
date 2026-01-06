@@ -1,96 +1,106 @@
-from flask import Flask, render_template, request  # Fixed: from is lowercase
-import json, os
+import os
+from flask import Flask, render_template, request, flash, redirect, url_for
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)  # Needed for flashing error messages
 
-# --- 🟢 ZONE 1: AZURE CONFIGURATION ---
+#ZONE 1: AZURE CONFIGURATION:-
+# Best Practice: Use environment variables for security
 AZURE_KEY = os.environ.get("AZURE_KEY") 
 AZURE_ENDPOINT = os.environ.get("AZURE_ENDPOINT")
 
 def get_ai_summary(text):
+    """Professional AI extraction with robust error handling."""
+    if not AZURE_KEY or not AZURE_ENDPOINT:
+        print("Configuration Error: Azure Credentials missing.")
+        return "Stay consistent and follow your structured path to success."
+
     try:
-        if not text or len(text) < 5:
-            return "Focus on your goals and keep practicing!"
-            
+        # Client initialization is cheap, but can be moved outside for high-traffic apps
         client = TextAnalyticsClient(AZURE_ENDPOINT, AzureKeyCredential(AZURE_KEY))
+        
+        # Using Abstractive Summarization for human-like study advice
         poller = client.begin_abstractive_summary([text])
         result = poller.result()
         
         for doc in result:
-            if not doc.is_error:
+            if not doc.is_error and doc.summaries:
                 return doc.summaries[0].text
     except Exception as e:
-        print(f"AI Error: {e}")
-    return "Stay consistent and follow your structured path to success."
+        # Log error internally, but don't crash the user experience
+        print(f"Azure AI Logic Error: {e}")
+    
+    return "Focus on gradual improvement and mastery of core concepts."
 
-# --- 🔵 ZONE 2: DYNAMIC PLAN LOGIC ---
+#ZONE 2:DYNAMIC PLAN LOGIC:-
 def generate_dynamic_plan(data, ai_insight):
-    stream = data.get("stream", "General")
+    """Constructs a structured, professional-grade study roadmap."""
+    stream = data.get("stream", "General Academic")
     weak = data.get("weak_areas", "").lower()
     hours = int(data.get("daily_time", 4))
-    style = data.get("learning_style", "Visual")
-
-    plan = [
-        "🌟 AI PROFESSIONAL INSIGHT:",
-        ai_insight,
-        "------------------------------------------"
+    
+    # Building the plan with a professional 'Report' structure
+    plan_blocks = [
+        f"### 🎯 GROWIQ ACADEMIC DIAGNOSTIC",
+        f"**AI Insight:** {ai_insight}",
+        "---",
+        f"**Stream:** {stream}",
+        "**Core Objectives:**"
     ]
 
-    if "computer" in stream.lower() or "it" in stream.lower():
-        plan.append("📘 Core Focus: Programming + Problem Solving")
-        if "dsa" in weak or "algorithm" in weak:
-            plan.append("🔹 Practice DSA daily using simple problems (arrays, strings)")
-        else:
-            plan.append("🔹 Focus on basics: C / Python fundamentals")
+    # Logical Subject Routing
+    if any(tech in stream.lower() for tech in ["computer", "it", "software"]):
+        plan_blocks.append("• Master Logic: Focus on Programming fundamentals and Algorithmic thinking.")
+        if any(w in weak for w in ["dsa", "algorithm", "coding"]):
+            plan_blocks.append("• Priority: Daily Data Structures practice (Arrays, Linked Lists).")
     else:
-        plan.append(f"📘 Core Focus: Concept clarity in {stream}")
-        plan.append(f"🔹 Spend extra time on specific topics you mentioned.")
+        plan_blocks.append(f"• Deep Dive: Concentrate on theoretical mastery in {stream}.")
 
+    # Time-based Strategy
     if hours <= 2:
-        plan.append("⏱ Study Strategy: Short focused sessions (Pomodoro)")
-    elif hours <= 4:
-        plan.append("⏱ Study Strategy: Balanced study + practice")
+        plan_blocks.append("• Efficiency: Utilize the Pomodoro Technique (25m study / 5m break).")
+    elif hours <= 5:
+        plan_blocks.append("• Balance: 60% Active Recall, 40% Reading/Revision.")
     else:
-        plan.append("⏱ Study Strategy: Deep learning + revision")
+        plan_blocks.append("• Immersion: Focus on mock tests and peer teaching for advanced mastery.")
 
-    weekly = """
-\n📅 Weekly Plan
-• Mon–Wed: Weak areas + core concepts
-• Thu–Fri: Practice & revision
-• Saturday: Test + improvement
-• Sunday: Light study + rest
-"""
-    return "\n".join(plan) + weekly
+    # Standard Professional Footer
+    plan_blocks.append("\n**📅 WEEKLY MILESTONES**")
+    plan_blocks.append("1. **Mon-Wed:** Attack the 'Hard' topics first.\n2. **Thu-Fri:** Revision and self-testing.\n3. **Weekend:** Rest and review progress.")
 
-# --- 🟡 ZONE 3: WEBSITE ROUTES (The Map) ---
+    return "\n".join(plan_blocks)
+
+#ZONE 3:WEBSITE ROUTES:-
 
 @app.route("/")
 def home():
-    """This route was missing - it shows your index page"""
     return render_template("index.html")
 
 @app.route("/form")
 def show_form():
-    """This route was missing - it shows your form page"""
     return render_template("form.html")
 
 @app.route("/generate-plan", methods=["POST"])
 def generate_plan():
     try:
-        data = request.form.to_dict()
+        # Use request.form specifically for safety
+        weak_areas = request.form.get('weak_areas', '').strip()
         
-        if not data.get('weak_areas'):
-            return "Please describe your challenges so the AI can help!", 400
+        if len(weak_areas) < 10:
+            # Better UX: Inform the user they need to provide more detail
+            return "Please provide a bit more detail (at least 10 characters) for a better AI plan.", 400
 
-        ai_insight = get_ai_summary(data['weak_areas'])
+        data = request.form.to_dict()
+        ai_insight = get_ai_summary(weak_areas)
         plan = generate_dynamic_plan(data, ai_insight)
 
         return render_template("plan.html", plan=plan, data=data)
     except Exception as e:
-        print(f"CRITICAL ERROR: {e}")
-        return f"System Error: {e}", 500
+        print(f"Route Error: {e}")
+        return "Our AI mentor is taking a short break. Please try again in a moment.", 500
 
 if __name__ == "__main__":
+    # In production (Azure/Render), debug should be False
     app.run(debug=True)
